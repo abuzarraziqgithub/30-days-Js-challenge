@@ -20,19 +20,20 @@ higherOrderFunction1(function2, 10);
 
 //* write a higher order function that takes two functions and a value, applies the first function to the value, and then applies the second to the result.
 
-const functionValue = function (val) {
-  console.log("Value of function is " + val);
+const valueFunction = function (val) {
+  console.log("The value for the first function is " + val);
+  return val;
 };
 
-const functionResult = function1(val);
-{
+const resultFunction = function (val) {
   const result = val + val;
-  console.log("The result of function is " + result);
-}
-
-const higherOrderFunction2 = function (fn1, fn2, value) {
-  fn1();
-  fn2();
+  console.log("The result for the second function is " + result);
+  return result;
 };
 
-higherOrderFunction2();
+const higherOrderFunction2 = function (fn1, fn2, val) {
+  const intermediateResult = fn1(val);
+  fn2(intermediateResult);
+};
+
+higherOrderFunction2(valueFunction, resultFunction, 20);
