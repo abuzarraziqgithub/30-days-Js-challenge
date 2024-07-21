@@ -10,9 +10,9 @@ console.log("The sum of numbers from 1 to 10 is:", sum);
 
 //* Write a program to print numbers from 10 to 1 using while loop.
 
-let y = 10;
+let x = 10;
 
-while (y >= 1) {
-  console.log(y);
-  y--;
+while (x >= 1) {
+  console.log(x);
+  x--;
 }
